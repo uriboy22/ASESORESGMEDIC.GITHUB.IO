@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página con Botón de Regreso y Redes Sociales</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+            background-image: url(red\ medica-10.jpg);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; /* Alinea los elementos en la parte inferior */
+            align-items: center;
+        }
+
+        .button {
+            width: 200px;
+            height: 50px;
+            margin-bottom: 20px; /* Ajusta la distancia desde el borde inferior */
+            background-color: #1aeef5; /* Color de fondo del botón */
+            color: white; /* Color del texto del botón */
+            border: none;
+            border-radius: 25px; /* Hace el botón ovalado */
+            cursor: pointer;
+            font-size: 16px; /* Tamaño del texto del botón */
+            text-align: center;
+            line-height: 50px; /* Centra el texto verticalmente */
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #00e8f8; /* Color del botón en hover */
+            transform: scale(1.9); /* Aumenta el tamaño del botón en hover */
+        }
+
+        /* Estilos para los enlaces de redes sociales */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            margin-top: 250px; /* Mueve los enlaces hacia arriba */
+            margin-left: 150px; /* Mueve los enlaces a la derecha */
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            margin: 0 30px;
+            color: rgb(0, 0, 0);
+            font-size: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-links img {
+            width: 100px;
+            height: 100px;
+            margin-right: 100px;
+            border-radius: 15px;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.6);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Enlaces de redes sociales con imágenes -->
+    <div class="social-links">
+        <a href="https://wa.me/5510673272" target="_blank">
+            <img src="WhatsApp-logo (1).png" alt="WhatsApp"> 
+        </a>
+        <a href="https://www.facebook.com/asesoresgmedicmx" target="_blank">
+            <img src="facee.webp" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/gmedicmx?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
+            <img src="instagram-new.png" alt="Instagram"> 
+        </a>
+    </div>
+
+    <button class="button" onclick="history.back()">Regresar</button>
+
+</body>
+</html>

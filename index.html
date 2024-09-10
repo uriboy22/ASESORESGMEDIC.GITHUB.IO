@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pantalla de Inicio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden; /* Asegura que no haya barras de desplazamiento */
+            background-color: #f4f4f4; /* Color de fondo por defecto mientras la imagen carga */
+        }
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url(ASESORES.jpg); /* Reemplaza con la ruta real de tu imagen */
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 2s ease-in-out; /* La imagen aparece gradualmente */
+        }
+        .background.show {
+            opacity: 1;
+        }
+        .container {
+            position: relative;
+            z-index: 1; /* Asegura que el contenido esté sobre la imagen de fondo */
+            text-align: center;
+            color: white;
+            top: 20%; /* Ajusta este valor para mover el botón más abajo */
+            transform: translateY(-50%); /* Centra verticalmente el contenedor */
+        }
+        .button {
+            background-color: #00ffea;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 50px; /* Cambiado para hacer el botón ovalado */
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+        .button:hover {
+            background-color: #00ffea;
+            transform: scale(2.2); /* Ajustado para que el botón no se haga demasiado grande */
+        }
+    </style>
+</head>
+<body>
+    <div class="background" id="background"></div>
+    <div class="container">
+        <a href="gmedic.html" class="button">ENTRA!!</a>
+    </div>
+    <script>
+        // Mostrar la imagen de fondo después de que se haya cargado completamente
+        window.addEventListener('load', function() {
+            document.getElementById('background').classList.add('show');
+        });
+    </script>
+</body>
+</html>
+

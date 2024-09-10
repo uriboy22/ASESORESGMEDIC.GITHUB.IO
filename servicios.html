@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página con Deslizamiento Manual de Imágenes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-image: url(neu.jpg); /* Fondo estático */
+            background-size: cover;
+            background-attachment: fixed; /* El fondo no se mueve al hacer scroll */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Ocultar cualquier desbordamiento del cuerpo */
+        }
+
+        /* Contenedor principal que abarca el 80% de la página */
+        .container {
+            width: 700%;
+            height: 90%;
+            background-color: rgba(255, 255, 255, 0); /* Fondo semitransparente */
+            border-radius: 15px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Contenedor para las imágenes en forma de lista */
+        .image-list {
+            width: 110%;
+            height: 110%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0px; /* Espacio entre las imágenes */
+            padding: 20px 0;
+            overflow-y: scroll; /* Barra de desplazamiento vertical */
+            scroll-behavior: smooth; /* Desplazamiento suave */
+        }
+
+        .image-list img {
+            width: auto;
+            height: auto;
+            max-width: 120%; /* Asegura que las imágenes no excedan el contenedor */
+            max-height: 120%; /* Asegura que las imágenes no excedan el contenedor */
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+
+        /* Estilos para la barra de desplazamiento */
+        /* Para navegadores basados en WebKit (Chrome, Safari) */
+        .image-list::-webkit-scrollbar {
+            width: 2px; /* Ancho de la barra de desplazamiento */
+        }
+
+        .image-list::-webkit-scrollbar-thumb {
+            background-color: #ffffff; /* Color del "pulgar" (la parte móvil de la barra) */
+            border-radius: 10px; /* Bordes redondeados para el "pulgar" */
+        }
+
+        .image-list::-webkit-scrollbar-thumb:hover {
+            background-color: #555; /* Color más oscuro cuando se pasa el cursor */
+        }
+
+        /* Para navegadores que soportan scrollbars con CSS nativo (Firefox) */
+        .image-list {
+            scrollbar-width: thin; /* Hace que la barra sea delgada */
+            scrollbar-color: #888 #ffffff; /* Color del "pulgar" y del fondo de la barra */
+        }
+
+        .button {
+            width: 200px;
+            height: 50px;
+            margin-top: 20px;
+            background-color: #1aeef5;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: center;
+            line-height: 50px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #00e8f8;
+            transform: scale(1.9);
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Contenedor principal que abarca el 80% de la página -->
+    <div class="container">
+        <!-- Contenedor para las imágenes en forma de lista -->
+        <div class="image-list" id="imageList">
+            <img src="SERVICIOS.jpg" alt="Imagen 1">
+            <img src="red medica-4.jpg" alt="5">
+            <img src="red medica-5.jpg" alt="4">
+            <img src="red medica-6.jpg" alt="Imagen 2">
+            <img src="red medica-7.jpg" alt="Imagen 3">
+            <img src="red medica-8.jpg" alt="Imagen 4">
+            <img src="red medica-9.jpg" alt="Imagen 5">
+        </div>
+
+        <button class="button" onclick="history.back()">Regresar</button>
+    </div>
+
+</body>
+</html>
+
